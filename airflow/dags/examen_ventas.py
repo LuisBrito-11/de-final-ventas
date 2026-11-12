@@ -14,8 +14,21 @@ with DAG(
     default_args={"retries": 0},
     tags=["examen"],
 ) as dag:
+    # Comprueba la actualidad de raw.ventas (max(_loaded_at)) con los umbrales de
+    # sources.yml. Una advertencia termina con salida 0 y la tarea queda en success;
+    # un error hace que run_dbt lance CalledProcessError y la tarea queda en failed.
+    verificar_freshness = PythonOperator(
+        task_id="verificar_freshness",
+        python_callable=run_dbt,
+        op_args=[["source", "freshness"]],
+    )
+
     construir_resumen = PythonOperator(
         task_id="construir_resumen",
         python_callable=run_dbt,
         op_args=[["build"]],
     )
+
+    # Con la regla predeterminada all_success, si freshness falla el build queda
+    # en upstream_failed y el resumen anterior se conserva.
+    verificar_freshness >> construir_resumen
