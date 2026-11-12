@@ -1,0 +1,3 @@
+dag_id         execution_date             task_id              state    start_date                        end_date
+examen_ventas  2026-11-12T11:46:17+00:00  verificar_freshness  success  2026-11-12T11:46:24.238260+00:00  2026-11-12T11:46:28.378802+00:00
+examen_ventas  2026-11-12T11:46:17+00:00  construir_resumen    success  2026-11-12T11:46:32.485302+00:00  2026-11-12T11:46:38.135294+00:00

@@ -1,0 +1,1 @@
+{"scenario": "advertencia", "rows": 6, "max_loaded_at": "2026-11-11T17:46:12.694873+00:00"}

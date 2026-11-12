@@ -1,0 +1,19 @@
+[2026-11-12T11:34:06.781+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-11-12T11:34:06.802+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: examen_ventas.construir_resumen manual__2026-11-12T11:33:47+00:00 [queued]>
+[2026-11-12T11:34:06.810+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: examen_ventas.construir_resumen manual__2026-11-12T11:33:47+00:00 [queued]>
+[2026-11-12T11:34:06.811+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-11-12T11:34:06.846+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): construir_resumen> on 2026-11-12 11:33:47+00:00
+[2026-11-12T11:34:06.852+0000] {standard_task_runner.py:72} INFO - Started process 431 to run task
+[2026-11-12T11:34:06.858+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'examen_ventas', 'construir_resumen', 'manual__2026-11-12T11:33:47+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/examen_ventas.py', '--cfg-path', '/tmp/tmp55aolzhh']
+[2026-11-12T11:34:06.861+0000] {standard_task_runner.py:105} INFO - Job 6: Subtask construir_resumen
+[2026-11-12T11:34:06.919+0000] {task_command.py:467} INFO - Running <TaskInstance: examen_ventas.construir_resumen manual__2026-11-12T11:33:47+00:00 [running]> on host 21b377da4b2e
+[2026-11-12T11:34:07.046+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='examen_ventas' AIRFLOW_CTX_TASK_ID='construir_resumen' AIRFLOW_CTX_EXECUTION_DATE='2026-11-12T11:33:47+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-12T11:33:47+00:00'
+[2026-11-12T11:34:07.047+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-11-12T11:34:07.062+0000] {logging_mixin.py:190} INFO - INICIO dbt ['build']
+[2026-11-12T11:34:12.973+0000] {logging_mixin.py:190} INFO - FIN dbt ['build']
+[2026-11-12T11:34:12.974+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-11-12T11:34:12.985+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-11-12T11:34:12.985+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=examen_ventas, task_id=construir_resumen, run_id=manual__2026-11-12T11:33:47+00:00, execution_date=20261112T113347, start_date=20261112T113406, end_date=20261112T113412
+[2026-11-12T11:34:13.097+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-11-12T11:34:13.105+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-11-12T11:34:13.106+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

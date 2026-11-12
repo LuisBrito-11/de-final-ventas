@@ -1,0 +1,28 @@
+airflow-1  | [2026-11-12T11:43:53.823+0000] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+airflow-1  | 	<TaskInstance: examen_ventas.verificar_freshness manual__2026-11-12T11:43:52+00:00 [scheduled]>
+airflow-1  | [2026-11-12T11:43:53.824+0000] {scheduler_job_runner.py:507} INFO - DAG examen_ventas has 0/1 running and queued tasks
+airflow-1  | [2026-11-12T11:43:53.825+0000] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+airflow-1  | 	<TaskInstance: examen_ventas.verificar_freshness manual__2026-11-12T11:43:52+00:00 [scheduled]>
+airflow-1  | [2026-11-12T11:43:53.827+0000] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: examen_ventas.verificar_freshness manual__2026-11-12T11:43:52+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+airflow-1  | [2026-11-12T11:43:53.828+0000] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='examen_ventas', task_id='verificar_freshness', run_id='manual__2026-11-12T11:43:52+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 2 and queue default
+airflow-1  | [2026-11-12T11:43:53.828+0000] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'examen_ventas', 'verificar_freshness', 'manual__2026-11-12T11:43:52+00:00', '--local', '--subdir', 'DAGS_FOLDER/examen_ventas.py']
+airflow-1  | [2026-11-12T11:43:53.845+0000] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'examen_ventas', 'verificar_freshness', 'manual__2026-11-12T11:43:52+00:00', '--local', '--subdir', 'DAGS_FOLDER/examen_ventas.py']
+airflow-1  | 127.0.0.1 - - [12/Nov/2026:11:43:54 +0000] "GET /health HTTP/1.1" 200 283 "-" "Python-urllib/3.11"
+airflow-1  | [2026-11-12T11:43:57.523+0000] {dagbag.py:588} INFO - Filling up the DagBag from /workspace/airflow/dags/examen_ventas.py
+airflow-1  | [2026-11-12T11:43:57.760+0000] {task_command.py:467} INFO - Running <TaskInstance: examen_ventas.verificar_freshness manual__2026-11-12T11:43:52+00:00 [queued]> on host 21b377da4b2e
+airflow-1  | 11:44:00  Running with dbt=1.9.4
+airflow-1  | 11:44:00  Registered adapter: duckdb=1.9.2
+airflow-1  | 11:44:01  Found 2 models, 17 data tests, 1 source, 426 macros
+airflow-1  | 11:44:01  
+airflow-1  | 11:44:01  Concurrency: 1 threads (target='local')
+airflow-1  | 11:44:01  
+airflow-1  | 11:44:01  1 of 1 START freshness of ventas_raw.ventas .................................... [RUN]
+airflow-1  | 11:44:01  1 of 1 ERROR STALE freshness of ventas_raw.ventas .............................. [ERROR STALE in 0.03s]
+airflow-1  | 11:44:01  
+airflow-1  | 11:44:01  Finished running 1 source in 0 hours 0 minutes and 0.15 seconds (0.15s).
+airflow-1  | 11:44:01  Done.
+airflow-1  | [2026-11-12T11:44:02.353+0000] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='examen_ventas', task_id='verificar_freshness', run_id='manual__2026-11-12T11:43:52+00:00', try_number=1, map_index=-1)
+airflow-1  | [2026-11-12T11:44:02.356+0000] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=examen_ventas, task_id=verificar_freshness, run_id=manual__2026-11-12T11:43:52+00:00, map_index=-1, run_start_date=2026-11-12 11:43:57.822138+00:00, run_end_date=2026-11-12 11:44:01.766528+00:00, run_duration=3.94439, state=failed, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=0, job_id=7, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2026-11-12 11:43:53.825938+00:00, queued_by_job_id=4, pid=1197
+airflow-1  | [2026-11-12T11:44:02.518+0000] {dagrun.py:823} ERROR - Marking run <DagRun examen_ventas @ 2026-11-12 11:43:52+00:00: manual__2026-11-12T11:43:52+00:00, state:running, queued_at: 2026-11-12 11:43:52.873957+00:00. externally triggered: True> failed
+airflow-1  | [2026-11-12T11:44:02.519+0000] {dagrun.py:905} INFO - DagRun Finished: dag_id=examen_ventas, execution_date=2026-11-12 11:43:52+00:00, run_id=manual__2026-11-12T11:43:52+00:00, run_start_date=2026-11-12 11:43:53.773152+00:00, run_end_date=2026-11-12 11:44:02.518969+00:00, run_duration=8.745817, state=failed, external_trigger=True, run_type=manual, data_interval_start=2026-11-12 11:43:52+00:00, data_interval_end=2026-11-12 11:43:52+00:00, dag_hash=9f8546d7595d9b6d6a8dc84fecc513c0
+airflow-1  | 127.0.0.1 - - [12/Nov/2026:11:44:04 +0000] "GET /health HTTP/1.1" 200 283 "-" "Python-urllib/3.11"

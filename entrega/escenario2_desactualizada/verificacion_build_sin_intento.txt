@@ -1,0 +1,11 @@
+# Archivos de log de Airflow para la ejecución manual__2026-11-12T11:43:52+00:00
+/state/logs/dag_id=examen_ventas/run_id=manual__2026-11-12T11:43:52+00:00/task_id=verificar_freshness/attempt=1.log
+
+# Directorio de construir_resumen en esa ejecución (si no existe, la tarea nunca se ejecutó)
+ls: cannot access '/state/logs/dag_id=examen_ventas/run_id=manual__2026-11-12T11:43:52+00:00/task_id=construir_resumen': No such file or directory
+
+# Detalle de la instancia de tarea construir_resumen (try_number = 0: ningún intento)
+('manual__2026-11-12T11:33:47+00:00', 'construir_resumen', 'success', 1, 0, '2026-11-12 11:34:06.802797', '2026-11-12 11:34:12.985695', 6.182898, 431, '21b377da4b2e', 6)
+('manual__2026-11-12T11:33:47+00:00', 'verificar_freshness', 'success', 1, 0, '2026-11-12 11:33:55.090257', '2026-11-12 11:34:01.354544', 6.264287, 383, '21b377da4b2e', 5)
+('manual__2026-11-12T11:43:52+00:00', 'construir_resumen', 'upstream_failed', 0, 0, '2026-11-12 11:44:01.865130', '2026-11-12 11:44:01.865130', 0.0, None, '', None)
+('manual__2026-11-12T11:43:52+00:00', 'verificar_freshness', 'failed', 1, 0, '2026-11-12 11:43:57.822138', '2026-11-12 11:44:01.766528', 3.94439, 1197, '21b377da4b2e', 7)

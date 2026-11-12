@@ -1,0 +1,92 @@
+airflow-1  | [2026-11-12T11:46:18.918+0000] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+airflow-1  | 	<TaskInstance: examen_ventas.verificar_freshness manual__2026-11-12T11:46:17+00:00 [scheduled]>
+airflow-1  | [2026-11-12T11:46:18.921+0000] {scheduler_job_runner.py:507} INFO - DAG examen_ventas has 0/1 running and queued tasks
+airflow-1  | [2026-11-12T11:46:18.921+0000] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+airflow-1  | 	<TaskInstance: examen_ventas.verificar_freshness manual__2026-11-12T11:46:17+00:00 [scheduled]>
+airflow-1  | [2026-11-12T11:46:18.924+0000] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: examen_ventas.verificar_freshness manual__2026-11-12T11:46:17+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+airflow-1  | [2026-11-12T11:46:18.925+0000] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='examen_ventas', task_id='verificar_freshness', run_id='manual__2026-11-12T11:46:17+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 2 and queue default
+airflow-1  | [2026-11-12T11:46:18.925+0000] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'examen_ventas', 'verificar_freshness', 'manual__2026-11-12T11:46:17+00:00', '--local', '--subdir', 'DAGS_FOLDER/examen_ventas.py']
+airflow-1  | [2026-11-12T11:46:18.937+0000] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'examen_ventas', 'verificar_freshness', 'manual__2026-11-12T11:46:17+00:00', '--local', '--subdir', 'DAGS_FOLDER/examen_ventas.py']
+airflow-1  | [2026-11-12T11:46:23.661+0000] {dagbag.py:588} INFO - Filling up the DagBag from /workspace/airflow/dags/examen_ventas.py
+airflow-1  | [2026-11-12T11:46:24.081+0000] {task_command.py:467} INFO - Running <TaskInstance: examen_ventas.verificar_freshness manual__2026-11-12T11:46:17+00:00 [queued]> on host 21b377da4b2e
+airflow-1  | 127.0.0.1 - - [12/Nov/2026:11:46:25 +0000] "GET /health HTTP/1.1" 200 283 "-" "Python-urllib/3.11"
+airflow-1  | 11:46:26  Running with dbt=1.9.4
+airflow-1  | 11:46:27  Registered adapter: duckdb=1.9.2
+airflow-1  | 11:46:27  Found 2 models, 17 data tests, 1 source, 426 macros
+airflow-1  | 11:46:28  
+airflow-1  | 11:46:28  Concurrency: 1 threads (target='local')
+airflow-1  | 11:46:28  
+airflow-1  | 11:46:28  1 of 1 START freshness of ventas_raw.ventas .................................... [RUN]
+airflow-1  | 11:46:28  1 of 1 WARN freshness of ventas_raw.ventas ..................................... [WARN in 0.02s]
+airflow-1  | 11:46:28  
+airflow-1  | 11:46:28  Finished running 1 source in 0 hours 0 minutes and 0.11 seconds (0.11s).
+airflow-1  | 11:46:28  Done.
+airflow-1  | [2026-11-12T11:46:28.824+0000] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='examen_ventas', task_id='verificar_freshness', run_id='manual__2026-11-12T11:46:17+00:00', try_number=1, map_index=-1)
+airflow-1  | [2026-11-12T11:46:28.828+0000] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=examen_ventas, task_id=verificar_freshness, run_id=manual__2026-11-12T11:46:17+00:00, map_index=-1, run_start_date=2026-11-12 11:46:24.238260+00:00, run_end_date=2026-11-12 11:46:28.378802+00:00, run_duration=4.140542, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=0, job_id=8, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2026-11-12 11:46:18.923261+00:00, queued_by_job_id=4, pid=1399
+airflow-1  | [2026-11-12T11:46:29.008+0000] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+airflow-1  | 	<TaskInstance: examen_ventas.construir_resumen manual__2026-11-12T11:46:17+00:00 [scheduled]>
+airflow-1  | [2026-11-12T11:46:29.008+0000] {scheduler_job_runner.py:507} INFO - DAG examen_ventas has 0/1 running and queued tasks
+airflow-1  | [2026-11-12T11:46:29.009+0000] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+airflow-1  | 	<TaskInstance: examen_ventas.construir_resumen manual__2026-11-12T11:46:17+00:00 [scheduled]>
+airflow-1  | [2026-11-12T11:46:29.010+0000] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: examen_ventas.construir_resumen manual__2026-11-12T11:46:17+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+airflow-1  | [2026-11-12T11:46:29.010+0000] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='examen_ventas', task_id='construir_resumen', run_id='manual__2026-11-12T11:46:17+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+airflow-1  | [2026-11-12T11:46:29.010+0000] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'examen_ventas', 'construir_resumen', 'manual__2026-11-12T11:46:17+00:00', '--local', '--subdir', 'DAGS_FOLDER/examen_ventas.py']
+airflow-1  | [2026-11-12T11:46:29.016+0000] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'examen_ventas', 'construir_resumen', 'manual__2026-11-12T11:46:17+00:00', '--local', '--subdir', 'DAGS_FOLDER/examen_ventas.py']
+airflow-1  | [2026-11-12T11:46:32.051+0000] {dagbag.py:588} INFO - Filling up the DagBag from /workspace/airflow/dags/examen_ventas.py
+airflow-1  | [2026-11-12T11:46:32.429+0000] {task_command.py:467} INFO - Running <TaskInstance: examen_ventas.construir_resumen manual__2026-11-12T11:46:17+00:00 [queued]> on host 21b377da4b2e
+airflow-1  | 11:46:35  Running with dbt=1.9.4
+airflow-1  | 127.0.0.1 - - [12/Nov/2026:11:46:35 +0000] "GET /health HTTP/1.1" 200 283 "-" "Python-urllib/3.11"
+airflow-1  | 11:46:35  Registered adapter: duckdb=1.9.2
+airflow-1  | 11:46:36  Found 2 models, 17 data tests, 1 source, 426 macros
+airflow-1  | 11:46:36  
+airflow-1  | 11:46:36  Concurrency: 1 threads (target='local')
+airflow-1  | 11:46:36  
+airflow-1  | 11:46:36  1 of 19 START test source_not_null_ventas_raw_ventas__loaded_at ................ [RUN]
+airflow-1  | 11:46:36  1 of 19 PASS source_not_null_ventas_raw_ventas__loaded_at ...................... [PASS in 0.08s]
+airflow-1  | 11:46:36  2 of 19 START test source_not_null_ventas_raw_ventas_cantidad .................. [RUN]
+airflow-1  | 11:46:36  2 of 19 PASS source_not_null_ventas_raw_ventas_cantidad ........................ [PASS in 0.03s]
+airflow-1  | 11:46:36  3 of 19 START test source_not_null_ventas_raw_ventas_fecha_venta ............... [RUN]
+airflow-1  | 11:46:36  3 of 19 PASS source_not_null_ventas_raw_ventas_fecha_venta ..................... [PASS in 0.04s]
+airflow-1  | 11:46:36  4 of 19 START test source_not_null_ventas_raw_ventas_id_venta .................. [RUN]
+airflow-1  | 11:46:36  4 of 19 PASS source_not_null_ventas_raw_ventas_id_venta ........................ [PASS in 0.04s]
+airflow-1  | 11:46:36  5 of 19 START test source_not_null_ventas_raw_ventas_precio_unitario ........... [RUN]
+airflow-1  | 11:46:36  5 of 19 PASS source_not_null_ventas_raw_ventas_precio_unitario ................. [PASS in 0.05s]
+airflow-1  | 11:46:36  6 of 19 START test source_unique_ventas_raw_ventas_id_venta .................... [RUN]
+airflow-1  | 11:46:37  6 of 19 PASS source_unique_ventas_raw_ventas_id_venta .......................... [PASS in 0.05s]
+airflow-1  | 11:46:37  7 of 19 START sql table model analytics.stg_ventas ............................. [RUN]
+airflow-1  | 11:46:37  7 of 19 OK created sql table model analytics.stg_ventas ........................ [OK in 0.25s]
+airflow-1  | 11:46:37  8 of 19 START test not_null_stg_ventas_cantidad ................................ [RUN]
+airflow-1  | 11:46:37  8 of 19 PASS not_null_stg_ventas_cantidad ...................................... [PASS in 0.02s]
+airflow-1  | 11:46:37  9 of 19 START test not_null_stg_ventas_fecha_venta ............................. [RUN]
+airflow-1  | 11:46:37  9 of 19 PASS not_null_stg_ventas_fecha_venta ................................... [PASS in 0.02s]
+airflow-1  | 11:46:37  10 of 19 START test not_null_stg_ventas_id_venta ............................... [RUN]
+airflow-1  | 11:46:37  10 of 19 PASS not_null_stg_ventas_id_venta ..................................... [PASS in 0.03s]
+airflow-1  | 11:46:37  11 of 19 START test not_null_stg_ventas_precio_unitario ........................ [RUN]
+airflow-1  | 11:46:37  11 of 19 PASS not_null_stg_ventas_precio_unitario .............................. [PASS in 0.03s]
+airflow-1  | 11:46:37  12 of 19 START test unique_stg_ventas_id_venta ................................. [RUN]
+airflow-1  | 11:46:37  12 of 19 PASS unique_stg_ventas_id_venta ....................................... [PASS in 0.02s]
+airflow-1  | 11:46:37  13 of 19 START test valores_ventas ............................................. [RUN]
+airflow-1  | 11:46:37  13 of 19 PASS valores_ventas ................................................... [PASS in 0.02s]
+airflow-1  | 11:46:37  14 of 19 START sql table model analytics.ventas_diarias ........................ [RUN]
+airflow-1  | 11:46:37  14 of 19 OK created sql table model analytics.ventas_diarias ................... [OK in 0.06s]
+airflow-1  | 11:46:37  15 of 19 START test not_null_ventas_diarias_fecha_venta ........................ [RUN]
+airflow-1  | 11:46:37  15 of 19 PASS not_null_ventas_diarias_fecha_venta .............................. [PASS in 0.03s]
+airflow-1  | 11:46:37  16 of 19 START test not_null_ventas_diarias_ingreso_total ...................... [RUN]
+airflow-1  | 11:46:37  16 of 19 PASS not_null_ventas_diarias_ingreso_total ............................ [PASS in 0.02s]
+airflow-1  | 11:46:37  17 of 19 START test not_null_ventas_diarias_numero_ventas ...................... [RUN]
+airflow-1  | 11:46:37  17 of 19 PASS not_null_ventas_diarias_numero_ventas ............................ [PASS in 0.02s]
+airflow-1  | 11:46:37  18 of 19 START test not_null_ventas_diarias_unidades_vendidas .................. [RUN]
+airflow-1  | 11:46:37  18 of 19 PASS not_null_ventas_diarias_unidades_vendidas ........................ [PASS in 0.02s]
+airflow-1  | 11:46:37  19 of 19 START test unique_ventas_diarias_fecha_venta .......................... [RUN]
+airflow-1  | 11:46:37  19 of 19 PASS unique_ventas_diarias_fecha_venta ................................ [PASS in 0.03s]
+airflow-1  | 11:46:37  
+airflow-1  | 11:46:37  Finished running 2 table models, 17 data tests in 0 hours 0 minutes and 1.11 seconds (1.11s).
+airflow-1  | 11:46:37  
+airflow-1  | 11:46:37  Completed successfully
+airflow-1  | 11:46:37  
+airflow-1  | 11:46:37  Done. PASS=19 WARN=0 ERROR=0 SKIP=0 TOTAL=19
+airflow-1  | [2026-11-12T11:46:38.782+0000] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='examen_ventas', task_id='construir_resumen', run_id='manual__2026-11-12T11:46:17+00:00', try_number=1, map_index=-1)
+airflow-1  | [2026-11-12T11:46:38.788+0000] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=examen_ventas, task_id=construir_resumen, run_id=manual__2026-11-12T11:46:17+00:00, map_index=-1, run_start_date=2026-11-12 11:46:32.485302+00:00, run_end_date=2026-11-12 11:46:38.135294+00:00, run_duration=5.649992, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=0, job_id=9, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2026-11-12 11:46:29.009467+00:00, queued_by_job_id=4, pid=1440
+airflow-1  | [2026-11-12T11:46:38.999+0000] {dagrun.py:854} INFO - Marking run <DagRun examen_ventas @ 2026-11-12 11:46:17+00:00: manual__2026-11-12T11:46:17+00:00, state:running, queued_at: 2026-11-12 11:46:17.925746+00:00. externally triggered: True> successful
+airflow-1  | [2026-11-12T11:46:38.999+0000] {dagrun.py:905} INFO - DagRun Finished: dag_id=examen_ventas, execution_date=2026-11-12 11:46:17+00:00, run_id=manual__2026-11-12T11:46:17+00:00, run_start_date=2026-11-12 11:46:18.861579+00:00, run_end_date=2026-11-12 11:46:38.999859+00:00, run_duration=20.13828, state=success, external_trigger=True, run_type=manual, data_interval_start=2026-11-12 11:46:17+00:00, data_interval_end=2026-11-12 11:46:17+00:00, dag_hash=9f8546d7595d9b6d6a8dc84fecc513c0
+airflow-1  | 127.0.0.1 - - [12/Nov/2026:11:46:45 +0000] "GET /health HTTP/1.1" 200 283 "-" "Python-urllib/3.11"

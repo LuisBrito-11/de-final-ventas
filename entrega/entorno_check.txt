@@ -1,0 +1,25 @@
+$ docker compose ps
+examen-ventas-airflow-1  Up 28 minutes (healthy)  127.0.0.1:8080->8080/tcp
+
+$ bash scripts/examen.sh check
+Usuario resuelto: default, UID=197609, GID=0
+OK: proyecto legible y montaje de solo lectura
+OK: escritura y reapertura en /data
+OK: escritura y reapertura en /state
+OK: escritura y reapertura en /state/logs
+OK: escritura y reapertura en /state/dbt/target
+OK: escritura y reapertura en /state/dbt/logs
+OK: reapertura de ventas.duckdb existente
+OK: creación, escritura y reapertura de DuckDB. Archivos temporales eliminados
+exit=0
+
+$ docker compose exec airflow airflow dags list
+dag_id         fileloc                                   owners       is_paused
+examen_ventas  /workspace/airflow/dags/examen_ventas.py  ['airflow']  False
+
+$ docker compose exec airflow airflow dags list-import-errors
+No data found
+
+$ docker compose exec airflow airflow tasks list examen_ventas --tree
+<Task(PythonOperator): verificar_freshness>
+    <Task(PythonOperator): construir_resumen>
